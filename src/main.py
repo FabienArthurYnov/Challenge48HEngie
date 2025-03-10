@@ -6,7 +6,7 @@ import sys
 from agent import ask_agent
 
 # Ensure the standard output uses ISO-8859-1 encoding
-sys.stdout.reconfigure(encoding='ISO-8859-1')
+sys.stdout.reconfigure(encoding='utf-8')
 
 reader = Reader('./ressources/input/filtered_tweets_engie.csv')
 messages = reader.load_messages()

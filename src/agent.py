@@ -3,6 +3,7 @@ from mistralai import Mistral
 from datetime import datetime
 import json
 
+import chardet
 
 def ask_agent(messages) :
     for message in messages :
@@ -33,7 +34,6 @@ def ask_agent(messages) :
         b = a[1].split('}')
         jsonOutput = '{'f"{b[0]}"'}'
         print(jsonOutput)
-
 
         #convert string to  object
         json_object = json.loads(jsonOutput)
