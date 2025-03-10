@@ -1,5 +1,6 @@
 from reader import Reader
 from plots import length_msg_frequency_graph, word_occurence_graph
+from writer import Writer
 import sys
 
 # Ensure the standard output uses ISO-8859-1 encoding
@@ -20,6 +21,7 @@ for message in messages:
     word_occurence["urgence"] += 1 if message.urgenceMention else 0
     word_occurence["scandale"] += 1 if message.scandaleMention else 0
 
-
 length_msg_frequency_graph(all_length)
 word_occurence_graph(word_occurence)
+writer = Writer("./ressources/generated/full_cleaned_msg.csv")
+writer.write_from_array_obj(messages)
