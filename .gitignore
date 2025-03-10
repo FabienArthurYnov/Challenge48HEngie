@@ -1,0 +1,6 @@
+/src/__pycache__/
+/ressources/generated/
+/ressources/img/graph/
+
+!/ressources/generated/.gitkeep
+!/ressources/img/graph/.gitkeep
