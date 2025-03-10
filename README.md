@@ -10,4 +10,4 @@ Remonté des informations des plaintes SAV clients sur un dashboard PowerBI clai
 - Python
 
   
-Auteurs : Sami HMIDA, Massil BRAIK, Dallas ABEYAGUNAWARDENA, Abdoulaye WANE, Fabien ARTHUR  
+Auteurs : Sami HMIDA, Massil BRAIK, Dallas ABEYAGUNAWARDENA, Abdoulaye WANE, Zineb RIDAOUI, Fabien ARTHUR  
