@@ -1,6 +1,7 @@
 import os
 from mistralai import Mistral
 from datetime import datetime
+import json
 
 now = datetime.now().astimezone()
 
@@ -22,7 +23,15 @@ chat_response = client.agents.complete(
         },
     ],
 )
-print(chat_response.choices[0].message.content)
+
+a = chat_response.choices[0].message.content.split('{')
+b = a[1].split('}')
+jsonOutput = '{'f"{b[0]}"'}'
+print(jsonOutput)
+
+
+#convert string to  object
+json_object = json.loads(jsonOutput)
 
 output = [
     {
