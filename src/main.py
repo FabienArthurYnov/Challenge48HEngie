@@ -9,5 +9,4 @@ messages = reader.load_messages()
 reader.close()
 
 for message in messages:
-    if (not message.engieMention):
-        print(message.full_text)
+    print(message.length)
