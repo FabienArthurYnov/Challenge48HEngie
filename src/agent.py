@@ -1,8 +1,13 @@
 import os
+import time
 from mistralai import Mistral
 from datetime import datetime
 import json
+from response import Response
+from writer import Writer
 
+
+repCsv = []
 def ask_agent(messages) :
     for message in messages :
         name = message.name
@@ -35,6 +40,17 @@ def ask_agent(messages) :
 
         #convert string to  object
         json_object = json.loads(jsonOutput)
+
+        resp = Response(
+            days_elapsed = json_object["delai"] ,
+            key_words = json_object["mot-cles"],
+            classification = json_object["gravite"],
+            priority =json_object["classification"],
+            category =json_object["categorie"]
+        )
+
+        repCsv.append(resp)
+
         
 
         print(json_object)
@@ -42,9 +58,14 @@ def ask_agent(messages) :
         output = [
             {
                 "delai":"temps ecoulés depuis la date de creation du tweet",
-                "mot-clés" : [],
-                "gravité": "int",
+                "mot-cles" : [],
+                "gravite": "int",
                 "classification" : "string",
                 "categorie": "string"
             },
         ],
+        time.sleep(3)
+
+    w =  Writer("./ressources/generated/response.csv")
+    w.write_from_array_obj(repCsv)
+
