@@ -1,6 +1,7 @@
 import os
 from mistralai import Mistral
 
+# Add the variable "MISTRAL_API_KEY" to your system environment variable with this value enviBHq5z75SvzYYlNjtDQm4HK4tKvTINjJG
 api_key = os.environ["MISTRAL_API_KEY"]
 
 client = Mistral(api_key=api_key)
