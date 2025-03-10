@@ -1,11 +1,6 @@
 from reader import Reader
 from plots import *
 from writer import Writer
-import datetime
-import sys
-
-# Ensure the standard output uses ISO-8859-1 encoding
-sys.stdout.reconfigure(encoding='ISO-8859-1')
 
 reader = Reader('./ressources/input/filtered_tweets_engie.csv')
 messages = reader.load_messages()
