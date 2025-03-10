@@ -6,5 +6,7 @@ class Message:
         self.created_at = created_at
         self.full_text = full_text
 
+        self.engieMention = ("@ENGIE" in self.full_text) or ("@EDF" in self.full_text)
+
     def __repr__(self):
         return f"Message(id={self.id}, screen_name='{self.screen_name}', name='{self.name}', created_at='{self.created_at}', full_text='{self.full_text[:30]}...')"
