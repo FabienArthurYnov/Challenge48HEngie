@@ -45,8 +45,8 @@ def ask_agent(messages) :
             days_elapsed = json_object["delai"] ,
             key_words = json_object["mot-cles"],
             classification = json_object["gravite"],
-            priority =json_object["classification"],
-            category =json_object["categorie"]
+            priority =json_object["categorie"],
+            category =json_object["classification"]
         )
 
         repCsv.append(resp)
