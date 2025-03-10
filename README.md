@@ -6,12 +6,12 @@ Remonté des informations des plaintes SAV clients sur un dashboard PowerBI clai
 - La priorité  
 - La gravité  
 
-### To start
-- Paste csv to process in ressources/input/filtered_tweets_engie.csv
-- On windows : execute runWin.cmd  
+### Pour lancer
+- Coller le csv dans ressources/input/filtered_tweets_engie.csv
+- Sur Windows : exécuter runWin.cmd  
   
-- Graphs are loaded in ressources/img/graph  
-- Cleaned csv is loaded in ressources/generated  
+- Les graphiques sont chargés dans ressources/img/graph  
+- Les nouveaux csv sont chargés dans ressources/generated  
 
   
 ### Stack
@@ -20,8 +20,8 @@ Remonté des informations des plaintes SAV clients sur un dashboard PowerBI clai
     - Matplotlib  
 - PowerBI  
   
-### Dependencies
-pip install mistralai  
+### Dépendences
+`pip install mistralai  `
     
     
-Auteurs : Sami HMIDA, Massil BRAIK, Dallas ABEYAGUNAWARDENA, Abdoulaye WANE, Zineb RIDAOUI, Fabien ARTHUR  
+__Auteurs__ : Sami HMIDA, Massil BRAIK, Dallas ABEYAGUNAWARDENA, Abdoulaye WANE, Zineb RIDAOUI, Fabien ARTHUR  
