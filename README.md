@@ -5,11 +5,20 @@ Remonté des informations des plaintes SAV clients sur un dashboard PowerBI clai
 - Le type de plainte  
 - La priorité  
 - La gravité  
+
+### To start
+- Paste csv to process in ressources/input/filtered_tweets_engie.csv
+- On windows : execute runWin.cmd  
+  
+- Graphs are loaded in ressources/img/graph  
+- Cleaned csv is loaded in ressources/generated  
+
   
 ### Stack
 - Python
     - Pandas  
     - Matplotlib  
+- PowerBI  
   
 ### Dependencies
 pip install mistralai  
