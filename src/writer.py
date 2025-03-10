@@ -15,7 +15,7 @@ class Writer:
         headers = array_obj[0].__dict__.keys()
         
         # Open the CSV file in write mode, create a CSV writer
-        with open(self.filename, mode='w', newline='', encoding='ISO-8859-1') as file:
+        with open(self.filename, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.DictWriter(file, fieldnames=headers)
             
             # Write the headers to the CSV
