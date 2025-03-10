@@ -28,5 +28,23 @@ def length_msg_frequency_graph(numbers):
     plt.xlim(0, 400)
     plt.legend()
 
-    # Display the plot
+    print("Saving length_average.png...")
+    # save the plot
     plt.savefig('./ressources/img/graph/length_average.png', format='png')
+
+def word_occurence_graph(word_dict):
+    words = list(word_dict.keys())
+    frequencies = list(word_dict.values())
+
+    # Create the bar plot
+    plt.figure(figsize=(10, 6))
+    plt.bar(words, frequencies, color='skyblue')
+
+    # Add labels and title
+    plt.xlabel('Words')
+    plt.ylabel('Occurrences')
+    plt.title('Word Occurrences in Messages')
+
+    # save the plot
+    print("Saving occurence_word.png...")
+    plt.savefig('./ressources/img/graph/occurence_word.png', format='png')
