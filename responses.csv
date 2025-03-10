@@ -1,0 +1,3 @@
+id,screen_name,name,created_at,full_text,classification,priority,category,key_words,days_elapsed,length,engieMention,delaiMention,panneMention,urgenceMention,scandaleMention
+1,oauiiii,massil,2023-11-16 16:13:18 +01:00,UNE CHAISE MAGNIFIQUE,urgent,80,Nul,chaise,5,21,False,False,False,False,False
+2,screen_name2,name2,2023-11-17 16:13:18 +01:00,full text 2,classification2,priority2,category2,key_words2,10,11,False,False,False,False,False
