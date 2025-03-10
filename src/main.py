@@ -3,6 +3,7 @@ from plots import *
 from writer import Writer
 import datetime
 import sys
+from agent import ask_agent
 
 # Ensure the standard output uses ISO-8859-1 encoding
 sys.stdout.reconfigure(encoding='ISO-8859-1')
@@ -31,3 +32,5 @@ msg_per_date([dt.date() for dt in all_datetime])
 word_occurence_graph(word_occurence)
 writer = Writer("./ressources/generated/full_cleaned_msg.csv")
 writer.write_from_array_obj(messages)
+
+ask_agent(messages)

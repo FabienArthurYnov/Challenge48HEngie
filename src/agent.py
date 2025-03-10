@@ -2,19 +2,13 @@ import os
 from mistralai import Mistral
 from datetime import datetime
 import json
-import sys
-from reader import Reader
-# Ensure the standard output uses ISO-8859-1 encoding
-sys.stdout.reconfigure(encoding='ISO-8859-1')
 
-reader = Reader('filtered_tweets_engie.csv')
-messages = reader.load_messages()
-reader.close()
+
 def ask_agent(messages) :
     for message in messages :
         name = message.name
         content = message.full_text
-        creates_at = message.creates_at
+        creates_at = message.created_at
 
         now = datetime.now().astimezone()
 
@@ -30,8 +24,6 @@ def ask_agent(messages) :
             messages=[
                 {
                     "role": "user",
-                    "name" : "Guillaume Tournier",
-                    "creation-date": "2023-11-16 16:13:18 +01:00",
                     "content": f"Auteur : {name}, Date de création : {creates_at}, Date Actuelle {formatted_date}, Contenu : {content}",
                 },
             ],
@@ -45,6 +37,8 @@ def ask_agent(messages) :
 
         #convert string to  object
         json_object = json.loads(jsonOutput)
+        
+
         print(json_object)
 
         output = [
@@ -53,6 +47,6 @@ def ask_agent(messages) :
                 "mot-clés" : [],
                 "gravité": "int",
                 "classification" : "string",
-                "categorie": "string",
+                "categorie": "string"
             },
         ],
