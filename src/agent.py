@@ -65,7 +65,9 @@ def ask_agent(messages) :
             },
         ],
         time.sleep(3)
+        w =  Writer("./ressources/generated/response.csv")
+        w.write_from_array_obj(repCsv, False)
 
     w =  Writer("./ressources/generated/response.csv")
-    w.write_from_array_obj(repCsv)
+    w.write_from_array_obj(repCsv, False)
 
