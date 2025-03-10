@@ -1,3 +1,5 @@
+import csv
+
 from Message import Message
 
 class Response(Message):
@@ -12,3 +14,4 @@ class Response(Message):
         
     def __repr__(self):
         return f"Message(id={self.id}, screen_name='{self.screen_name}', name='{self.name}', created_at='{self.created_at}', full_text='{self.full_text[:30]}...', classification='{self.classification}', priority='{self.priority}',category='{self.category}', key_words ='{self.key_words}', days_elapsed = '{self.days_elapsed}')"
+
