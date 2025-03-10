@@ -15,3 +15,6 @@ def moving_average(data, window_size):
         avg = sum(data[start:end]) / (end - start)
         moving_avg.append(avg)
     return moving_avg
+
+def sci_str_to_int(s):
+    return int(float(s.replace(',', '.')))

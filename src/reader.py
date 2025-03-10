@@ -1,5 +1,6 @@
 import pandas as pd
 from Message import Message
+from maths import sci_str_to_int
 
 class Reader:
     def __init__(self, file_name):
@@ -26,7 +27,7 @@ class Reader:
 
         messages = [
             Message(
-                msg_id=row['id'],
+                msg_id=sci_str_to_int(row['id']),
                 screen_name=row['screen_name'],
                 name=row['name'],
                 created_at=row['created_at'],
