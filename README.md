@@ -7,7 +7,7 @@ Remonté des informations des plaintes SAV clients sur un dashboard PowerBI clai
 - La gravité  
 
 ### To start
-- Paste csv to process in ressources/input
+- Paste csv to process in ressources/input/filtered_tweets_engie.csv
 - On windows : execute runWin.cmd  
   
 - Graphs are loaded in ressources/img/graph  
