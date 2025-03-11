@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
 from maths import moving_average
+from wordcloud import WordCloud
 
 
 def prepare_num_for_occurence_plot(numbers, window_average_size):
@@ -89,3 +90,23 @@ def word_occurence_graph(word_dict):
     # save the plot
     print("Saving occurence_word.png...")
     plt.savefig('./ressources/img/graph/occurence_word.png', format='png')
+
+def word_cloud(word_dict):
+    # Create the word cloud
+    wordcloud = WordCloud(
+        width=800, height=400, 
+        background_color="white", 
+        colormap="coolwarm",  # You can change this to another colormap
+    ).generate_from_frequencies(word_dict)
+
+    # Plot it using matplotlib
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")  # Hide axes for better visibility
+
+    # Save and show
+    plt.savefig("wordcloud.png", dpi=300)
+
+    # save the plot
+    print("Saving word_cloud.png...")
+    plt.savefig('./ressources/img/graph/word_cloud.png', format='png')

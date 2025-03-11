@@ -44,4 +44,5 @@ word_count = dict(Counter(all_words))
 sorted_word_count = dict(sorted(word_count.items(), key=lambda item: item[1], reverse=True))
 
 word_occurence_graph(sorted_word_count)
+word_cloud(sorted_word_count)
 
