@@ -26,6 +26,6 @@ msg_per_weekday([dt.weekday()+1 for dt in all_datetime])
 msg_per_date([dt.date() for dt in all_datetime])
 word_occurence_graph(word_occurence)
 writer = Writer("./ressources/generated/full_cleaned_msg.csv")
-writer.write_from_array_obj(messages)
+writer.write_from_array_obj(messages, 'ISO-8859-1')
 
 ask_agent(messages)

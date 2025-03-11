@@ -9,6 +9,13 @@ from writer import Writer
 
 repCsv = []
 def ask_agent(messages) :
+    # Add the variable "MISTRAL_API_KEY" to your system environment variable with this value enviBHq5z75SvzYYlNjtDQm4HK4tKvTINjJG
+    try :
+        api_key = os.environ["MISTRAL_API_KEY"]
+    except:
+        print("Wrong mistral API key")
+        return
+    
     for message in messages :
         name = message.name
         content = message.full_text
@@ -17,9 +24,6 @@ def ask_agent(messages) :
         now = datetime.now().astimezone()
 
         formatted_date = now.strftime('%Y-%m-%d %H:%M:%S %z')
-
-        # Add the variable "MISTRAL_API_KEY" to your system environment variable with this value enviBHq5z75SvzYYlNjtDQm4HK4tKvTINjJG
-        api_key = os.environ["MISTRAL_API_KEY"]
 
         client = Mistral(api_key=api_key)
 
@@ -66,8 +70,8 @@ def ask_agent(messages) :
         ],
         time.sleep(3)
         w =  Writer("./ressources/generated/response.csv")
-        w.write_from_array_obj(repCsv, False)
+        w.write_from_array_obj(repCsv, 'utf-8')
 
     w =  Writer("./ressources/generated/response.csv")
-    w.write_from_array_obj(repCsv, False)
+    w.write_from_array_obj(repCsv, 'utf-8')
 
