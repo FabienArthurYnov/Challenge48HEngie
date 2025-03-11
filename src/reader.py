@@ -1,5 +1,6 @@
 import pandas as pd
 from Message import Message
+from maths import sci_str_to_int
 
 class Reader:
     def __init__(self, file_name):
@@ -19,14 +20,14 @@ class Reader:
         Return all messages objects from the csv.
         """
         column_names = ['id', 'screen_name', 'name', 'created_at', 'full_text']
-        df = pd.read_csv(self.file_name, sep=';', encoding="ISO-8859-1", on_bad_lines="warn", names=column_names, header=0)
+        df = pd.read_csv(self.file_name, sep=';', encoding="utf-8", on_bad_lines="warn", names=column_names, header=0)
 
         # Convert the 'created_at' column to datetime
         df['created_at'] = pd.to_datetime(df['created_at'], errors='coerce')
 
         messages = [
             Message(
-                msg_id=row['id'],
+                msg_id=sci_str_to_int(row['id']),
                 screen_name=row['screen_name'],
                 name=row['name'],
                 created_at=row['created_at'],

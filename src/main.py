@@ -1,12 +1,7 @@
 from reader import Reader
 from plots import *
 from writer import Writer
-import datetime
-import sys
 from agent import ask_agent
-
-# Ensure the standard output uses ISO-8859-1 encoding
-sys.stdout.reconfigure(encoding='utf-8')
 
 reader = Reader('./ressources/input/filtered_tweets_engie.csv')
 messages = reader.load_messages()
@@ -31,6 +26,6 @@ msg_per_weekday([dt.weekday()+1 for dt in all_datetime])
 msg_per_date([dt.date() for dt in all_datetime])
 word_occurence_graph(word_occurence)
 writer = Writer("./ressources/generated/full_cleaned_msg.csv")
-writer.write_from_array_obj(messages)
+writer.write_from_array_obj(messages, False)
 
 ask_agent(messages)
