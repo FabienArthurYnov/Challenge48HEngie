@@ -76,13 +76,15 @@ def word_occurence_graph(word_dict):
     frequencies = list(word_dict.values())
 
     # Create the bar plot
-    plt.figure(figsize=(10, 6))
-    plt.bar(words, frequencies, color='skyblue')
+    plt.figure(figsize=(200, 6))
+    plt.bar(words, frequencies, color='skyblue', width=0.5)
 
     # Add labels and title
+    plt.xticks(rotation=60, ha="right", fontsize=7)
     plt.xlabel('Words')
     plt.ylabel('Occurrences')
     plt.title('Word Occurrences in Messages')
+    plt.tight_layout()
 
     # save the plot
     print("Saving occurence_word.png...")

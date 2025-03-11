@@ -1,5 +1,6 @@
 class Message:
-    def __init__(self, screen_name, name, created_at, full_text):
+    def __init__(self, msg_id, screen_name, name, created_at, full_text):
+        self.id = msg_id
         self.screen_name = screen_name
         self.name = name
         self.created_at = created_at

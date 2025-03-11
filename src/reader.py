@@ -1,6 +1,8 @@
 import pandas as pd
 from Message import Message
 from maths import sci_str_to_int
+from response import Response
+import ast
 
 class Reader:
     def __init__(self, file_name):
@@ -27,10 +29,30 @@ class Reader:
 
         messages = [
             Message(
+                msg_id=sci_str_to_int(row['id']),
                 screen_name=row['screen_name'],
                 name=row['name'],
                 created_at=row['created_at'],
                 full_text=row['full_text']
+            )
+            for _, row in df.iterrows()
+        ]
+        return messages
+    
+    def load_answers(self):
+        """
+        Return all answers objects from the csv.
+        """
+        column_names = ['days_elapsed', 'key_words', 'classification', 'priority', 'category']
+        df = pd.read_csv(self.file_name, sep=',', encoding="utf-8", on_bad_lines="warn", names=column_names, header=0)
+
+        messages = [
+            Response(
+                classification=row['classification'],
+                priority=row['priority'],
+                category=row['category'],
+                key_words=ast.literal_eval(row['key_words']),
+                days_elapsed=row['days_elapsed']
             )
             for _, row in df.iterrows()
         ]
