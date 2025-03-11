@@ -9,7 +9,7 @@ from writer import Writer
 
 repCsv = []
 def ask_agent(messages) :
-    # Add the variable "MISTRAL_API_KEY" to your system environment variable with this value enviBHq5z75SvzYYlNjtDQm4HK4tKvTINjJG
+    # Add the variable "MISTRAL_API_KEY" to your system environment variable with this value BHq5z75SvzYYlNjtDQm4HK4tKvTINjJG
     try :
         api_key = os.environ["MISTRAL_API_KEY"]
     except:
@@ -54,7 +54,6 @@ def ask_agent(messages) :
         )
 
         repCsv.append(resp)
-
         
 
         print(json_object)
@@ -72,6 +71,4 @@ def ask_agent(messages) :
         w =  Writer("./ressources/generated/response.csv")
         w.write_from_array_obj(repCsv, 'utf-8')
 
-    w =  Writer("./ressources/generated/response.csv")
-    w.write_from_array_obj(repCsv, 'utf-8')
 
